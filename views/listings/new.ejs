@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplates") %>
+<div class="row">
+<body>
+    <div class="col-8 offset-2 mt-3">
+        
+    <h3>Add listings:</h3>
+    <form action="/listings" method="post" class="needs-validation expand-lg" novalidate enctype="multipart/form-data">
+        <div class="mb-3 ">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id='title' class="form-control" name="Listing[title]" placeholder="Add title" required>
+            <div class="invalid-feedback">
+                title should be required
+              </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+    <textarea name="Listing[description]" class="form-control" required></textarea>
+    <div class="invalid-feedback">
+        description should be required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image</label>
+  <input type="file" name="Listing[image]"class="form-control" required>
+  </div>
+    <div class="row">
+    <div class="mb-3 col-md-4">
+        <label for="price" class="form-label">Price</label>
+    <input type="text" name="Listing[price]" class="form-control"  placeholder="1500" required>
+    <div class="invalid-feedback">
+        price should be required
+      </div>
+    </div>
+    <div class="mb-3 col-md-8">
+        <label for="country" class="form-label">Country</label>
+    <input type="text" name="Listing[country]"class="form-control"  placeholder="India" required>
+    <div class="invalid-feedback">
+        country should be required
+      </div>
+    </div>
+</div>
+    <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+    <input type="text" name="Listing[location]"class="form-control"  placeholder="Goa,Delhi" required>
+    <div class="invalid-feedback">
+        location should be required
+      </div>
+    </div>
+   
+    <button class="btn btn-dark btn-add mt-3 mb-3">Add</button>
+    
+</form>
+</div>
+</body>
+</div>
+
