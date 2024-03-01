@@ -14,6 +14,7 @@ router
   .post(upload.single('Listing[image]'),isLoggedIn,wrapAsync(listingController.createListing));
     
 router.get('/new',isLoggedIn,listingController.renderListingForm);
+router.get('/search',wrapAsync(listingController.searchListing))
     
 router
   .route('/:id')

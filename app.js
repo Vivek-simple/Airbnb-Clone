@@ -17,6 +17,7 @@ const flash=require('connect-flash');
 const passport=require('passport');
 const LocalStrategy=require('passport-local');
 const User=require('./models/user.js')
+const Listing=require('./models/listing');
 app.set('view engine','ejs');
 app.set("view engine", "ejs");
 app.engine('ejs', ejsMate);

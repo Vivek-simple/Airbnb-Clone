@@ -74,3 +74,17 @@ module.exports.deleteListing=async (req,res)=>{
     req.flash('success', 'Listing Deleted Succesfully');
     res.redirect('/listings'); 
 }    
+
+module.exports.searchListing=async(req,res)=>{
+    let {location,category}=req.query;
+    let listings;
+    if(location){
+     listings=await Listing.find({
+    location: { $regex: new RegExp(location, 'i') } });
+    }
+    else if(category){
+       listings= await Listing.find({
+        category: { $regex: new RegExp(category, 'i') } });
+    }
+    res.render('listings/listings.ejs',{listings});
+}

@@ -5,10 +5,11 @@
   </script>
 <div class="row">
 <body>
-  <div class="col-8 offset-3 mt-3">
+  <!-- <div class="col-8 offset-3 mt-3">
     <h3><%=listing.title%></h3>
-    </div>
+    </div> -->
   <div class="card col-6 offset-3 listing-card">
+    <h4><%=listing.title%></h4>
     <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="...">
     <div class="card-body ">
       <p class="card-text"><b>owned by <i><%=listing.owner.username%></i></b></p>
@@ -19,17 +20,17 @@
       </div>
     </div>
    
-    <div class="row">
-      <div class="col-1 offset-3">
+    <div class="row btn-row">
+      <div class="col-1 offset-3 btn-edit">
       <a href="/listings/<%=listing._id%>/edit" class="btn btn-dark btn-add">Edit</a>
     </div>
-    <div class="col-1 ms-4">
+    <div class="col-1 ms-4 btn-delete">
    <form action="/listings/<%=listing._id%>?_method=DELETE" method="post">
     <button class="btn btn-dark">delete</button>
    </form>
   </div>
   </div>
-  <div class="col-8 offset-3">
+  <div class="col-6 offset-3 review">
     <hr>
     <%if(user){%>
     <h3>Leave a Review</h3>
@@ -77,7 +78,7 @@
 </div>
 <% }%>
 </div>
-<div class="col-6 offset-3 mb-3"><b> Where you’ll be</b>
+<div class="col-6 offset-3 mb-3 map-area"><b> Where you’ll be</b>
   <div id="map"></div>
 </div>
 <script src="/js/map.js"></script>

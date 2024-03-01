@@ -11,8 +11,8 @@ body{
 .navbar{
     height: 80px !important;
     background-color: white !important;
-    z-index: 100 !important;
-    overflow: hidden !important;
+    z-index: 1000 !important;
+    /* overflow: hidden !important; */
     top:0 !important;
 }
 .navbar-brand i{
@@ -100,6 +100,75 @@ background-color: white;
 /* map */
 
 #map { 
-    width:43vw;
+    width:40vw;
     height:50vh;
    }
+   /* responsiveness */
+
+   @media only screen and (max-width: 765px) {
+    
+/* navbar1 */
+    .airbnb{
+        display: none;
+       }
+    .nav-icon{
+        font-size: 30px !important;
+        margin-right: 0 !important;
+    }
+    .search-bar{
+       margin-left: -5%;
+       }
+    .search-input{
+       font-size: 12px !important;
+       font-weight: 600;
+    }   
+    .search-btn{
+        font-size: 12px !important;
+    }
+    .side-button{
+        font-size: 15px !important;
+    }
+
+    /* show  */
+
+    .btn-edit{
+        margin-left: 0 !important;
+        margin-right: 20px !important;
+    }
+    .review,.map-area,.listing-card{
+        width:100% !important;
+        margin-left: 0 !important;
+    }
+    #map{
+        width: 100% !important;
+    }
+
+    /* add and edit*/
+    .new-listing label{
+        font-size: .8rem;
+    }
+    .new-listing input{
+        font-size: .75rem;
+    }
+    .new-listing{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+    }
+    .new-listing h3{
+        font-size: 1rem;
+    } 
+
+    /* navbar-2 */
+    .navbar-2nd {
+        width: 100%;
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .navbar-2nd::-webkit-scrollbar {
+        display: none;
+    }
+   .filter-icon{
+    margin-right:3rem;
+   }
+  }

@@ -1,7 +1,7 @@
 <% layout("/layouts/boilerplates") %>
 <div class="row">
 <body>
-    <div class="col-8 offset-2 mt-3">
+    <div class="col-8 offset-2 mt-3 new-listing">
         
     <h3>Add listings:</h3>
     <form action="/listings" method="post" class="needs-validation expand-lg" novalidate enctype="multipart/form-data">
@@ -24,6 +24,13 @@
       <label for="image" class="form-label">Image</label>
   <input type="file" name="Listing[image]"class="form-control" required>
   </div>
+  <div class="mb-3">
+    <label for="category" class="form-label">Category</label>
+<input type="text" name="Listing[category]"class="form-control" required>
+<div class="invalid-feedback">
+  category should be required
+</div>
+</div>
     <div class="row">
     <div class="mb-3 col-md-4">
         <label for="price" class="form-label">Price</label>

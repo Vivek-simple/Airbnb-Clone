@@ -8,7 +8,16 @@
     align-items: center !important;
     background-color: white;
     position: sticky !important;
-    z-index: 10;
+    z-index: 1;
+  }
+  .navbar-2nd a{
+    text-decoration: none;
+    color: black;
+    opacity: .8;
+  }
+  .filter-icon:hover{
+    border-bottom: 3px solid rgb(150, 150, 150);
+    opacity: 1;
   }
   .img{
     height:20px;
@@ -48,34 +57,48 @@
 </style>
 
   <div class="navbar-2nd">
+    <a href="/listings/search?category=lake">
     <div class="filter-icon">
       <div><i class="fa-solid fa-water"></i></div>
       <p>Lake</p>
     </div>
+  </a>
+  <a href="/listings/search?category=beach">
     <div class="filter-icon">
       <div><i class="fa-solid fa-umbrella-beach"></i></div>
       <p>Beach</p>
     </div>
+  </a>
+    <a href="/listings/search?category=trending">
     <div class="filter-icon">
       <div><i class="fa-solid fa-fire"></i></div>
       <p>Trending</p>
     </div>
+  </a>
+    <a href="/listings/search?category=rooms">
     <div class="filter-icon">
       <div><i class="fa-solid fa-bed"></i></div>
       <p>Rooms</p>
     </div>
+  </a>
+    <a href="/listings/search?category=boat">
     <div class="filter-icon">
       <div><i class="fa-solid fa-sailboat"></i></div>
       <p>Boat</p>
     </div>
+  </a>
+    <a href="/listings/search?category=pool">
     <div class="filter-icon">
       <div><i class="fa-solid fa-person-swimming"></i></div>
       <p>Pool</p>
     </div>
+  </a>
+    <a href="/listings/search?category=mountains">
     <div class="filter-icon">
-      <div><i class="fa-solid fa-snowflake"></i></div>
-      <p>Arctic</p>
+      <div><i class="fa-solid fa-mountain"></i></div>
+      <p>Mountains</p>
     </div>
+  </a>
     <div class="switchbar">
     <div class="form-check-reverse form-switch ">
       <input class="form-check-input " type="checkbox" role="switch" id="switch">

@@ -1,19 +1,21 @@
-<nav class="navbar navbar-expand-md navbar-expand-sm bg-body-tertiary border-bottom sticky-top ">
+<style>
+.addMargin{
+  margin-bottom:80px;
+}
+</style>
+<nav class="navbar navbar-expand-md  bg-body-tertiary border-bottom sticky-top ">
     <div class="container-fluid">
-      <a class="navbar-brand nav-logo d-flex" href="/listings"><i class="fa-brands fa-airbnb"></i><p>airbnb</p></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand nav-logo d-flex" href="/listings"><i class="fa-brands fa-airbnb nav-icon"></i><p class="airbnb">airbnb</p></a>
+      <div class="search-bar offset-3">
+        <form action="/listings/search"class="d-flex " role="search" method="get">
+          <input class="form-control me-2 search-input " type="search" placeholder="Search destination" aria-label="Search" name="location">
+          <button class="btn btn-dark btn-add search-btn" type="submit">Search</button>
+        </form>
+      </div>
+      <button class="navbar-toggler side-button" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse " id="navbarNavAltMarkup" >
-        <!-- <div class="navbar-nav">
-          <a class="nav-link ms-5" href="/listings">Explore</a>
-        </div> -->
-        <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 " type="search" placeholder="Search destination" aria-label="Search">
-            <button class="btn btn-dark btn-add" type="submit">Search</button>
-          </form>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup" >
       
         <div class="navbar-nav ms-auto">
           <a class="nav-link" href="/listings/new">Airbnb your home</a>
@@ -28,3 +30,15 @@
       </div>
     </div>
   </nav>
+  <script>
+    let btn=document.querySelector('.side-button');
+    btn.addEventListener('click',()=>{
+      let navbar=document.querySelector('.navbar');
+      if(!navbar.classList.contains('addMargin')){
+         navbar.classList.add('addMargin');
+      }
+      else{
+        navbar.classList.remove('addMargin');
+      }
+    })
+  </script>
