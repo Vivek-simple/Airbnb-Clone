@@ -20,11 +20,11 @@
 </div>
 <div class="mb-3">
     <label for="image" class="form-label">Original image</label><br>
-    <img src="<%=listing.image.url%>" alt="" height="100px" width="150px">
+    <img src="<%=listing.image.url[0]%>" alt="" height="100px" width="150px">
 </div>
 <div class="mb-3">
     <label for="image" class="form-label">Upload Image</label>
-    <input type="file" name="Listing[image]" class="form-control">
+    <input type="file" name="Listing[image[]]" class="form-control" multiple>
 </div>
 <div class="mb-3">
     <label for="category" class="form-label">Category</label>

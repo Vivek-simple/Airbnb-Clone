@@ -10,7 +10,7 @@
     </div> -->
   <div class="card col-6 offset-3 listing-card">
     <h4><%=listing.title%></h4>
-    <img src="<%=listing.image.url%>" class="card-img-top show-img" alt="...">
+    <img src="<%=listing.image.url[0]%>" class="card-img-top show-img" alt="...">
     <div class="card-body ">
       <p class="card-text"><b>owned by <i><%=listing.owner.username%></i></b></p>
       <p class="card-text"><%=listing.description%></p>

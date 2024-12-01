@@ -111,8 +111,11 @@
     <%for(let listing of listings){%> 
         <a href="/listings/<%=listing._id%>" class="f-anchor">
     <div class="card col listing-card" >
-        <img src="<%=listing.image.url%>" class="card-img-top" alt="listing image" style="width: 22rem;">
-        <div class="card-img-overlay"></div>
+        <img src="<%=listing.image.url[0]%>" class="card-img-top" alt="listing image" style="width: 22rem;">
+        <div class="card-img-overlay">
+          <button class="left-arrow" ><i class="fa-solid fa-chevron-left"></i></button>
+          <button class="right-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
         <div class="card-body">
           <p class="card-text"><b><%=listing.title%></b><br>
           <b>&#8377; <%=listing.price.toLocaleString("en-In")%></b>
@@ -122,5 +125,41 @@
     </a>
       <%}%>
     </div> 
+      
+    <script>  
+['.right-arrow', '.left-arrow'].forEach((arrowClass) => {
+    document.querySelectorAll(arrowClass).forEach((arrowButton) => {
+        arrowButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            let src = arrowButton.parentElement.parentElement.firstElementChild.src;
+            let listings = JSON.parse('<%- JSON.stringify(listings) %>');
+
+            listings.forEach((listing) => {
+                if (listing.image.url.includes(src)) {
+                    let currentIndex = listing.image.url.indexOf(src);
+                    let nextIndex;
+
+                    if (arrowClass === '.right-arrow') {
+                        nextIndex = currentIndex + 1;
+                    } else if (arrowClass === '.left-arrow') {
+                        nextIndex = currentIndex - 1;
+                    }
+
+                    if (nextIndex >= 0 && nextIndex < listing.image.url.length) {
+                        let nextSrc = listing.image.url[nextIndex];
+                        let images = document.querySelectorAll('.card-img-top');
+                        images.forEach((img) => {
+                            if (img.src === src) {
+                                img.src = nextSrc;
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    });
+});
+
+    </script>
        <script src="/js/switch.js"></script>
 

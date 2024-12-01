@@ -81,9 +81,31 @@ body{
     height: 18rem !important;
     object-fit: cover;
 }
+/* 
+overlay */
+.card-img-overlay{
+display: flex;
+align-items: center;
+justify-content: space-between;
+opacity: 0;
+} 
 .card-img-overlay:hover{
-opacity: .15 !important;
-background-color: white;
+    opacity: 1;
+}
+/* .left-arrow{
+    visibility: hidden;
+} */
+
+.right-arrow,.left-arrow{
+    text-align: center;
+    height: 27px;
+    width: 27px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+.right-arrow,.left-arrow i{
+    font-size: 13px;
 }
 .btn-add{
     background-color: #fe424d !important;
